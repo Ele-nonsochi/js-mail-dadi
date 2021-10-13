@@ -5,22 +5,24 @@ stampa un messaggio appropriato sull’esito del controllo.*/
 const userDigit = prompt("Prego digitare la propria e-mail")
 
 //Creo i miei elementi
-const userEmail = ["constantine85.@gmail.com", "frodo.baggings@gmail.com", "dr.seussgmail.com"]
+const userEmail = ["constantine85.@gmail.com", "frodo.baggings@gmail.com", "dr.seuss@gmail.com"]
 console.log(userEmail)
 
-let emailWrong = false;
-let emailCorrect = true;
+let emailCorrect = false;
+//let emailCorrect = true;
 
-//Controllo email - alert se non fa parte
+//Controllo l'email al'interno del ciclo
 for (let i = 0; i < userEmail.length; i++) {
-    const emailDigit = userEmail[i];
-    console.log(emailDigit)
-    if (emailDigit === userEmail) {
+    const currentEmail = userEmail[i];
+    console.log(currentEmail)
+    if (userDigit === currentEmail) {
         emailCorrect = true;
         alert("E-mail digitata è coretta.");
-    } else if (emailDigit !== userEmail) {
-        emailWrong = false;
-        alert("E-mail errata , riprovare.");
     }
+}
+
+//Se non ne fa parte esce dal ciclo e esce l'alert
+if (!emailCorrect) {
+    alert("E-mail errata , riprovare.");
 }
 
